@@ -1,0 +1,32 @@
+.navbar {
+  flex-grow: 1;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.searchButton {
+  height: 32px;
+  width: 32px;
+}
+
+.iconButton {
+  margin-right: 8px;
+}
+
+.signInButton {
+  color: inherit;
+}
+
+.contactButton {
+  color: inherit;
+}
