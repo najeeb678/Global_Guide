@@ -15,7 +15,7 @@ import styles from "./navbar.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
 import { Typography } from "@mui/material";
-export default function NavBarDrawer() {
+export default function SideBar() {
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
@@ -65,13 +65,23 @@ export default function NavBarDrawer() {
   );
 
   return (
-    <Box sx={{ backgroundColor: "#14171c", color: "#FFFFFF" }}>
+    <Box sx={{ backgroundColor: "", color: "#FFFFFF" }}>
       <Button onClick={toggleDrawer(true)} sx={{ color: "#FFFFFF" }}>
         <MenuIcon />
       </Button>
 
       <Drawer open={open} onClose={toggleDrawer(false)}>
-        {DrawerList}
+        <Box
+          sx={{
+            width: 250,
+            backgroundColor: "#14171c",
+            color: "#FFFFFF",
+            height: "100%",
+          }}
+          onClick={toggleDrawer(false)}
+        >
+          {DrawerList}
+        </Box>
       </Drawer>
     </Box>
   );
