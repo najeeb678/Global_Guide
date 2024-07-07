@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -59,14 +59,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 interface NavBarProps {
   toggleSidebar: () => void;
 }
-export default function NavBar({ toggleSidebar }:NavBarProps) {
+export default function NavBar({ toggleSidebar }: NavBarProps) {
   return (
     <Box className={styles.navbar}>
       <AppBar position="static" sx={{ backgroundColor: "#070807" }}>
         <Toolbar className={styles.toolbar}>
           <Grid container spacing={2} alignItems="center">
             <Grid item xs={4} md={4}>
-              <SideBar  toggleSidebar={toggleSidebar} />
+              <SideBar toggleSidebar={toggleSidebar} />
             </Grid>
             <Grid item xs={4} md={4}>
               <Box className={styles.logoContainer}>
@@ -88,7 +88,7 @@ export default function NavBar({ toggleSidebar }:NavBarProps) {
               sx={{
                 display: { xs: "none", md: "flex" },
                 justifyContent: "flex-end",
-                alignItems: "center", // Align items to center vertically
+                alignItems: "center",
               }}
             >
               <Search>
@@ -104,7 +104,7 @@ export default function NavBar({ toggleSidebar }:NavBarProps) {
                 size="large"
                 color="inherit"
                 aria-label="save"
-                sx={{ margin: "0px 10px 0px 10px" }}
+                sx={{ margin: "0px 10px 0px 15px" }}
               >
                 <Image
                   src="/images/Save.svg"
@@ -113,7 +113,9 @@ export default function NavBar({ toggleSidebar }:NavBarProps) {
                   alt="Save Icon"
                 />
               </IconButton>
-              <Button className={styles.signInButton}>Sign In</Button>
+              <Button sx={{ minWidth: "100px", color: "inherit" }}>
+                Sign In
+              </Button>
               <Button className={styles.contactButton}>Contact</Button>
             </Grid>
           </Grid>

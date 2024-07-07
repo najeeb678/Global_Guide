@@ -1,7 +1,7 @@
 "use client"
 import HeroSection from "@/components/HeroSection/HeroSection";
 import NavBar from "@/components/NavBar/NavBar";
-import styles from "./Home.module.css";
+import styles from "./page.module.css";
 import React from "react";
 
 export default function Home() {
