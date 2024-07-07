@@ -20,10 +20,6 @@ export default function SideBar({ toggleSidebar }: any) {
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
-  };
-
-  const handleSidebarToggle = () => {
-    toggleDrawer(!open); 
     toggleSidebar(); 
   };
 
@@ -31,7 +27,7 @@ export default function SideBar({ toggleSidebar }: any) {
     <Box
       sx={{ width: 250, backgroundColor: "#14171c", color: "#FFFFFF" }}
       role="presentation"
-      onClick={toggleDrawer(false)}
+      onClick={toggleDrawer(false)} // Close drawer when clicking outside the list
     >
       <Box className={styles.logoContainer} mt={3} mb={3}>
         <Image src="/images/Logo.svg" width={22} height={22} alt="logo" />
@@ -71,7 +67,7 @@ export default function SideBar({ toggleSidebar }: any) {
 
   return (
     <Box sx={{ backgroundColor: "", color: "#FFFFFF" }}>
-      <Button onClick={handleSidebarToggle} sx={{ color: "#FFFFFF" }}>
+      <Button onClick={toggleDrawer(!open)} sx={{ color: "#FFFFFF" }}>
         <MenuIcon />
       </Button>
 

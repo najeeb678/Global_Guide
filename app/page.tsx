@@ -7,7 +7,7 @@ import React from "react";
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
 
-  // Handler to toggle sidebar state
+  
   const handleToggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
