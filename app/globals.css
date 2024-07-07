@@ -46,3 +46,11 @@ body {
   margin: 0 auto;
   padding: 0 1rem;
 }
+.mainContent {
+  margin-left: 0; /* Adjust this value when sidebar opens */
+  transition: margin-left 0.3s ease; /* Smooth transition when sidebar opens/closes */
+}
+
+.mainContent.shifted {
+  margin-left: 250px; /* Adjust this to match the width of your sidebar */
+}
