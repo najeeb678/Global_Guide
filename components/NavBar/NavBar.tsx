@@ -56,8 +56,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
-
-export default function NavBar({ toggleSidebar }:any) {
+interface NavBarProps {
+  toggleSidebar: () => void;
+}
+export default function NavBar({ toggleSidebar }:NavBarProps) {
   return (
     <Box className={styles.navbar}>
       <AppBar position="static" sx={{ backgroundColor: "#070807" }}>

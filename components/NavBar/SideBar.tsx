@@ -14,8 +14,10 @@ import styles from "./navbar.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
 import { Typography } from "@mui/material";
-
-export default function SideBar({ toggleSidebar }: any) {
+interface SideBarProps {
+  toggleSidebar: () => void;
+}
+export default function SideBar({ toggleSidebar }: SideBarProps) {
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
@@ -23,11 +25,33 @@ export default function SideBar({ toggleSidebar }: any) {
     toggleSidebar(); 
   };
 
+   const sidebarLinks = [
+    {
+      imgURL: "/icons/home.svg",
+      route: "/",
+      label: "Home",
+    },
+    {
+      imgURL: "/icons/dollar-circle.svg",
+      route: "/my-banks",
+      label: "My Banks",
+    },
+    {
+      imgURL: "/icons/transaction.svg",
+      route: "/transaction-history",
+      label: "Transaction History",
+    },
+    {
+      imgURL: "/icons/money-send.svg",
+      route: "/payment-transfer",
+      label: "Transfer Funds",
+    },
+  ];
   const DrawerList = (
     <Box
       sx={{ width: 250, backgroundColor: "#14171c", color: "#FFFFFF" }}
       role="presentation"
-      onClick={toggleDrawer(false)} // Close drawer when clicking outside the list
+      onClick={toggleDrawer(false)} 
     >
       <Box className={styles.logoContainer} mt={3} mb={3}>
         <Image src="/images/Logo.svg" width={22} height={22} alt="logo" />
