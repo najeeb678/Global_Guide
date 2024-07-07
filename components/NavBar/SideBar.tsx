@@ -23,8 +23,8 @@ export default function SideBar({ toggleSidebar }: any) {
   };
 
   const handleSidebarToggle = () => {
-    toggleDrawer(!open); // Toggle the state of the drawer
-    toggleSidebar(); // Call toggleSidebar to manage state in parent (Home) component
+    toggleDrawer(!open); 
+    toggleSidebar(); 
   };
 
   const DrawerList = (
