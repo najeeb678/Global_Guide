@@ -1,0 +1,9 @@
+.mainContent {
+    transition: margin-left 0.3s ease;
+    margin-left: 0;
+  }
+  
+  .mainContent.shifted {
+    margin-left: 250px; 
+  }
+  

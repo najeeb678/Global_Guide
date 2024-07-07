@@ -35,7 +35,7 @@ ul, ol {
 
 /* Custom global properties */
 body {
-  background-color: #f5f5f5;
+  background-color: #030403;
   color: #333;
   line-height: 1.6;
   overflow-x: hidden;
@@ -45,4 +45,12 @@ body {
   max-width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
+}
+.mainContent {
+  margin-left: 0; 
+  transition: margin-left 1.7s ease; /* Smooth transition when sidebar opens/closes */
+}
+
+.mainContent.shifted {
+  margin-left: 250px; 
 }

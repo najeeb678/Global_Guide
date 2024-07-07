@@ -1,4 +1,3 @@
-"use client";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -15,18 +14,20 @@ import styles from "./navbar.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
 import { Typography } from "@mui/material";
-export default function SideBar() {
+
+export default function SideBar({ toggleSidebar }: any) {
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
+    toggleSidebar(); 
   };
 
   const DrawerList = (
     <Box
       sx={{ width: 250, backgroundColor: "#14171c", color: "#FFFFFF" }}
       role="presentation"
-      onClick={toggleDrawer(false)}
+      onClick={toggleDrawer(false)} // Close drawer when clicking outside the list
     >
       <Box className={styles.logoContainer} mt={3} mb={3}>
         <Image src="/images/Logo.svg" width={22} height={22} alt="logo" />
@@ -35,7 +36,7 @@ export default function SideBar() {
         </Typography>
       </Box>
       <List>
-        {["Brands", "Releases", "Distilleries ", "Companies"].map(
+        {["Brands", "Releases", "Distilleries", "Companies"].map(
           (text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
@@ -66,7 +67,7 @@ export default function SideBar() {
 
   return (
     <Box sx={{ backgroundColor: "", color: "#FFFFFF" }}>
-      <Button onClick={toggleDrawer(true)} sx={{ color: "#FFFFFF" }}>
+      <Button onClick={toggleDrawer(!open)} sx={{ color: "#FFFFFF" }}>
         <MenuIcon />
       </Button>
 

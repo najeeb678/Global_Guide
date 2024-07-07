@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -28,8 +28,7 @@ const Search = styled("div")(({ theme }) => ({
     marginLeft: theme.spacing(1),
     width: "auto",
   },
-  marginTop: "5px", 
-  
+  marginTop: "5px",
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -58,14 +57,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function NavBar() {
+export default function NavBar({ toggleSidebar }:any) {
   return (
     <Box className={styles.navbar}>
       <AppBar position="static" sx={{ backgroundColor: "#070807" }}>
         <Toolbar className={styles.toolbar}>
           <Grid container spacing={2} alignItems="center">
             <Grid item xs={4} md={4}>
-              <SideBar />
+              <SideBar  toggleSidebar={toggleSidebar} />
             </Grid>
             <Grid item xs={4} md={4}>
               <Box className={styles.logoContainer}>
@@ -103,7 +102,7 @@ export default function NavBar() {
                 size="large"
                 color="inherit"
                 aria-label="save"
-                sx={{margin:"0px 10px 0px 10px"}}
+                sx={{ margin: "0px 10px 0px 10px" }}
               >
                 <Image
                   src="/images/Save.svg"
