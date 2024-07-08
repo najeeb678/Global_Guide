@@ -103,7 +103,8 @@ export default function SideBar({ toggleSidebar }: SideBarProps) {
         <MenuIcon />
       </Button>
 
-      <Drawer open={open} onClose={toggleDrawer(false)}>
+      <Drawer variant="persistent" open={open}
+      sx={{ '& .MuiDrawer-paper': { border: 'none' } }} >
         <Box
           sx={{
             width: 250,
@@ -119,4 +120,3 @@ export default function SideBar({ toggleSidebar }: SideBarProps) {
     </Box>
   );
 }
-
