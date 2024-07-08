@@ -7,55 +7,12 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import Image from "next/image";
-import SearchIcon from "@mui/icons-material/Search";
-import { Grid, InputBase } from "@mui/material";
+
+import { Grid } from "@mui/material";
 import styles from "./navbar.module.css";
-import { styled, alpha } from "@mui/material/styles";
 import SideBar from "./SideBar";
+import SearchBar from "../SearchBar";
 
-const Search = styled("div")(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.05),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.05),
-  },
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(1),
-    width: "auto",
-  },
-  marginTop: "5px",
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  width: "100%",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch",
-      },
-    },
-  },
-}));
 interface NavBarProps {
   toggleSidebar: () => void;
 }
@@ -91,15 +48,11 @@ export default function NavBar({ toggleSidebar }: NavBarProps) {
                 alignItems: "center",
               }}
             >
-              <Search>
-                <SearchIconWrapper>
-                  <SearchIcon />
-                </SearchIconWrapper>
-                <StyledInputBase
-                  placeholder="Search…"
-                  inputProps={{ "aria-label": "search" }}
-                />
-              </Search>
+              <SearchBar
+                onChange={(e) => console.log(e.target.value)}
+                placeholder="Search by name"
+              />
+
               <IconButton
                 size="large"
                 color="inherit"
