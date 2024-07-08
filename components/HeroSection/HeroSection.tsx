@@ -10,7 +10,7 @@ const HeroSection = () => {
         <Grid item xs={12} md={5}>
           <Box
             sx={{
-              backgroundColor: "#141414",
+              backgroundImage: "url(/images/box1.svg)",
               height: "636px",
               display: "flex",
               justifyContent: "center",
